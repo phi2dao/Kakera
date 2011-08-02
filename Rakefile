@@ -17,10 +17,10 @@ Jeweler::Tasks.new do |gem|
   gem.name = "kakera"
   gem.homepage = "http://github.com/phi2dao/kakera"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
+  gem.summary = %Q{A Ruby-based parsing expression grammar generator.}
   gem.description = %Q{TODO: longer description of your gem}
-  gem.email = ""
-  gem.authors = [""]
+  gem.email = "whamilt1@swarthmore.edu"
+  gem.authors = ["William Hamilton-Levi"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
