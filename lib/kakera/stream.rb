@@ -1,3 +1,5 @@
+require 'kakera/helpers'
+
 module Kakera
   class Stream
     attr_reader :offset, :lineno
@@ -61,7 +63,8 @@ module Kakera
     
     def lock &block
       offset, lineno = @offset, @lineno
-      if [nil, true, false].include? block.call(@offset)
+      result = block.call(@offset)
+      unless Kakera.success? result
         @offset, @lineno = offset, lineno
       end
       result
@@ -79,7 +82,7 @@ end
 
 class String
   def to_stream
-    Stream.new self
+    Kakera::Stream.new self
   end
 end
 
@@ -89,6 +92,6 @@ class File
     self.each_char do |c|
       string << c
     end
-    Stream.new string
+    Kakera::Stream.new string
   end
 end

@@ -18,7 +18,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/phi2dao/kakera"
   gem.license = "MIT"
   gem.summary = %Q{A Ruby-based parsing expression grammar generator.}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.description = %Q{A Ruby-based parsing expression grammar generator.  Parsers can be built with one of two DSLs, a Regexp-like format, or an object based structure.  Supports optional packrat parsing.}
   gem.email = "whamilt1@swarthmore.edu"
   gem.authors = ["William Hamilton-Levi"]
   # dependencies defined in Gemfile
@@ -42,7 +42,7 @@ end
 
 task :default => :test
 
-require 'rake/rdoctask'
+require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
